@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Buổi sáng tốt lành, chị gái đặc biệt của tôi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg1: #FFDEE9;
+      --bg2: #B5FFFC;
+      --accent: #FF6B8A;
+      --text: #1b2632;
+      --muted: rgba(27,38,50,0.65);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      color:var(--text);
+      background: linear-gradient(135deg, var(--bg1) 0%, #FFF7B2 40%, var(--bg2) 100%);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:2rem;
+    }
+
+    .card{
+      width:min(900px, 96%);
+      background:rgba(255,255,255,0.6);
+      backdrop-filter: blur(6px) saturate(120%);
+      border-radius:24px;
+      box-shadow: 0 10px 30px rgba(11,20,30,0.12);
+      overflow:hidden;
+      display:grid;
+      grid-template-columns: 1fr 360px;
+      gap:0;
+      align-items:stretch;
+    }
+
+    .left{
+      padding:3.2rem 2.4rem;
+      display:flex;
+      flex-direction:column;
+      gap:1.2rem;
+    }
+
+    h1{
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 3.8vw, 3.2rem);
+      margin:0;
+      letter-spacing: -0.02em;
+      color:var(--text);
+    }
+
+    p.lead{
+      margin:0;
+      font-size: clamp(1rem, 1.7vw, 1.1rem);
+      color:var(--muted);
+      line-height:1.6;
+    }
+
+    .heart-row{
+      display:flex;
+      align-items:center;
+      gap:1rem;
+      margin-top:.8rem;
+    }
+
+    .heart{
+      width:64px;height:64px;
+      display:inline-grid;place-items:center;
+      background:linear-gradient(180deg,#fff 0%,rgba(255,255,255,0.3)100%);
+      border-radius:18px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      transform-origin:center;
+      animation:pulse 1s infinite ease-in-out;
+    }
+
+    .heart svg{width:36px;height:36px;display:block}
+
+    @keyframes pulse{
+      0%{transform:scale(1)}
+      50%{transform:scale(1.08)}
+      100%{transform:scale(1)}
+    }
+
+    .btn{
+      margin-top:1rem;
+      display:inline-block;
+      padding:0.7rem 1.1rem;
+      border-radius:12px;
+      font-weight:600;
+      text-decoration:none;
+      color:white;
+      background:linear-gradient(90deg, var(--accent) 0%, #FF9BA8 100%);
+      box-shadow: 0 8px 18px rgba(255,107,138,0.18);
+    }
+
+    .right{
+      position:relative;
+      padding:1.8rem;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background: linear-gradient(180deg, rgba(255,255,255,0.25), rgba(255,255,255,0.04));
+    }
+
+    .sun-wrap{
+      width:260px;height:260px;border-radius:999px;
+      background: radial-gradient(circle at 30% 30%, #FFF9E6 0%, #FFF1C7 30%, #FFE2A8 60%, #FFD2A0 100%);
+      display:grid;place-items:center;
+      box-shadow: 0 14px 40px rgba(255,166,77,0.15), inset 0 -10px 40px rgba(255,200,120,0.12);
+      transform:translateY(36px);
+      animation: rise 2.6s cubic-bezier(.19,.99,.22,1) forwards;
+    }
+
+    @keyframes rise{
+      from{transform:translateY(120px) scale(.9);filter:blur(2px)}
+      to{transform:translateY(0) scale(1);filter:blur(0)}
+    }
+
+    .sun-text{
+      text-align:center;
+    }
+
+    .sun-text .morning{
+      font-family: 'Playfair Display', serif;
+      font-size:1.2rem;
+      margin-bottom:.2rem;
+    }
+
+    .sun-text .love{
+      font-weight:700;font-size:1.4rem;color:var(--accent);
+    }
+
+    footer.note{
+      grid-column:1/-1;
+      padding:1rem 1.4rem;
+      font-size:.9rem;color:var(--muted);
+      text-align:right;
+    }
+
+    /* Responsive breakpoints */
+    @media (max-width: 1024px) {
+      .card { grid-template-columns: 1fr; }
+      .right { order: -1; padding: 2rem 1rem; }
+    }
+
+    @media (max-width: 768px) {
+      body { padding: 1rem; }
+      .left { padding: 2rem 1.4rem; }
+      h1 { font-size: clamp(1.4rem, 5vw, 2.2rem); }
+      p.lead { font-size: clamp(0.95rem, 2.8vw, 1rem); }
+      .sun-wrap { width: 200px; height: 200px; }
+    }
+
+    @media (max-width: 480px) {
+      .card { border-radius: 16px; box-shadow: 0 6px 14px rgba(0,0,0,0.08); }
+      .left { padding: 1.4rem 1rem; }
+      .heart { width: 52px; height: 52px; }
+      .heart svg { width: 28px; height: 28px; }
+      .btn { padding: 0.6rem 0.9rem; font-size: 0.9rem; }
+      footer.note { font-size: 0.8rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card" role="main">
+    <div class="left">
+      <h1>Buổi sáng tốt lành, chị gái đặc biệt của tôi 🌤️</h1>
+      <p class="lead">Ngày mới bắt đầu, em chỉ muốn nhắn một điều nhỏ thôi: <strong>Em thật sự thích chị mỉm cười</strong>. Chúc chị có một ngày đầy nắng và nhiều niềm vui bất ngờ.</p>
+
+      <div class="heart-row">
+        <div class="heart" aria-hidden="true">
+          <!-- Heart icon -->
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 20s-6.716-4.534-9.192-7.01C-0.52 9.193 2.6 4 8 6.03 9.93 6.92 12 9 12 9s2.07-2.08 4-2.97C21.4 4 24.52 9.193 21.192 12.99 18.716 15.466 12 20 12 20z" fill="url(#g)" opacity="0.95"/>
+            <defs>
+              <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#FF7A88"/>
+                <stop offset="1" stop-color="#FF3D6E"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+
+        <div style="display:flex;flex-direction:column;">
+          <div style="font-weight:600;font-size:1.05rem;">My Girl</div>
+          <div style="color:var(--muted);font-size:.95rem">— Hy vọng hôm nay chị lại cười thật nhiều nhé!</div>
+
+          <a class="btn" href="#" onclick="showSurprise(event)">Mở lời chúc</a>
+        </div>
+      </div>
+
+      <div id="surprise" style="margin-top:1.2rem;display:none;padding:1rem;background:linear-gradient(90deg, rgba(255,255,255,0.6), rgba(255,255,255,0.35));border-radius:12px;">
+        <strong>Chúc chị một ngày:</strong>
+        <ul style="margin:.4rem 0 0 1.1rem;color:var(--muted)">
+          <li>Ngập tràn năng lượng tích cực</li>
+          <li>Được nhiều người khen xinh đẹp</li>
+          <li>Có ai đó (là em) luôn nhớ đến chị</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="right" aria-hidden="true">
+      <div class="sun-wrap" title="Mặt trời chào buổi sáng">
+        <div class="sun-text">
+          <div class="morning">Chào buổi sáng</div>
+          <div class="love">My Girl ❤️</div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="note">Một lời chúc nhỏ nhưng thật lòng — mong chị có ngày thật đẹp ✨</footer>
+  </div>
+
+  <script>
+    function showSurprise(e){
+      e.preventDefault();
+      const s = document.getElementById('surprise');
+      if(!s) return;
+      s.style.display = s.style.display === 'none' ? 'block' : 'none';
+      // small pulse on heart when opened
+      const heart = document.querySelector('.heart');
+      if(heart){
+        heart.animate([
+          { transform: 'scale(1)' },
+          { transform: 'scale(1.15)' },
+          { transform: 'scale(1)' }
+        ], { duration: 450, easing: 'ease-out' });
+      }
+    }
+  </script>
+</body>
+</html>
